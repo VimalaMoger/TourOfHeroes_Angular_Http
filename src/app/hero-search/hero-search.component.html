@@ -1,0 +1,14 @@
+<h2>Hero Search</h2>
+
+<!-- user input -->
+ <!-- search hero by name -->
+<input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+<!-- heroes$ is an Observable using angular AsyncPipe -->
+<div>
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+</div>
